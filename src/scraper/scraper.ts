@@ -76,26 +76,35 @@ class Scraper {
         this._METARHours = METARHours === undefined || METARHours < 0 ? 0 : Math.min(METARHours, 6) 
     }
 
+
     async init() {
         const options: LaunchOptions = {
-            args: ['--enable-gpu', '--no-sandbox', '--disable-setuid-sandbox'],
+            args: [
+                '--no-sandbox',
+                '--disable-setuid-sandbox',
+                '--disable-dev-shm-usage'
+            ],
             headless: true,
             handleSIGINT: false
         };
-        if(process.env.NODE_ENV === 'production') 
-            options["executablePath"] = "/usr/bin/google-chrome"
-        this._browser = await puppeteer.launch(options)
-        this._page = await this._browser.newPage()
+
+        this._browser = await puppeteer.launch(options);
+
+        this._page = await this._browser.newPage();
+
         await this._page.setViewport({
             width: 1900,
             height: 1000,
             isLandscape: true,
             hasTouch: false,
             deviceScaleFactor: 1
-        })
-        await this._page.goto('https://plan.navcanada.ca/wxrecall/')
-        await this._resetSearch()
+        });
+
+        await this._page.goto('https://plan.navcanada.ca/wxrecall/');
+
+        await this._resetSearch();
     }
+
 
     async close() {await this._browser?.close()}
 
