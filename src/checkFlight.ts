@@ -47,18 +47,22 @@ export async function checkFlight(
     return {
         airport,
         category,
+
         current:
             evaluateFlight(
                 category,
                 parsedMetar.visibility,
                 parsedMetar.ceiling
             ),
+
         forecast:
             evaluateForecast(
                 category,
                 parsedTaf.periods
             ),
+
         metar: parsedMetar,
+
         taf: parsedTaf
     };
 }
