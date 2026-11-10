@@ -30,10 +30,11 @@ button.addEventListener(
 
         try {
 
-            const response =
-                await fetch(
-                    `http://localhost:3000/api/check-flight?airport=${airport}&category=${category}`
-                );
+            const API_URL = "https://flight-school-tool-api.onrender.com";
+
+            const response = await fetch(
+                `${API_URL}/api/check-flight?airport=${encodeURIComponent(airport)}&category=${encodeURIComponent(category)}`
+            );
 
             const data =
                 await response.json();
