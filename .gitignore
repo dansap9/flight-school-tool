@@ -1,7 +1,7 @@
 # Dependencies
 node_modules/
 
-# Puppeteer browser downloads
+# Puppeteer
 .cache/
 puppeteer/
 
@@ -11,8 +11,9 @@ build/
 
 # Environment variables
 .env
+.env.local
 
-# Vercel
+# Deployment
 .vercel/
 
 # Logs
@@ -23,4 +24,7 @@ build/
 Thumbs.db
 
 # VS Code
-.vscode/settings.json
+.vscode/
+
+# TypeScript build info
+*.tsbuildinfo
