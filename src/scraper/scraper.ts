@@ -79,7 +79,7 @@ class Scraper {
     async init() {
         const options: LaunchOptions = {
             args: ['--enable-gpu', '--no-sandbox', '--disable-setuid-sandbox'],
-            headless: false,
+            headless: true,
             handleSIGINT: false
         };
         if(process.env.NODE_ENV === 'production') 
