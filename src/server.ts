@@ -46,10 +46,13 @@ app.get("/api/check-flight", async (req, res) => {
 
 });
 
+const PORT =
+    process.env.PORT || 3000;
+
 app.listen(
-    3000,
+    PORT,
     () =>
         console.log(
-            "Server listening on port 3000"
+            `Server listening on port ${PORT}`
         )
 );
