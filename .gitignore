@@ -1,0 +1,26 @@
+# Dependencies
+node_modules/
+
+# Puppeteer browser downloads
+.cache/
+puppeteer/
+
+# Build output
+dist/
+build/
+
+# Environment variables
+.env
+
+# Vercel
+.vercel/
+
+# Logs
+*.log
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# VS Code
+.vscode/settings.json
